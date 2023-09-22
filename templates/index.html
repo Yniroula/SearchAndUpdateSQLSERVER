@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="stylesheet" href="/static/updatestyle.css">
+  <title>Account Search</title>
+</head>
+<body>
+
+<div class="top-center">
+  <h1>User Account Search</h1>
+    <div class="search-box">
+      <form action="/search" method="post">
+        <select name="search_by" id="search_by">
+          <option value="email">Search by Email</option>
+          <option value="name">Search by Name</option>
+        </select>
+        <input type="text" id="search_term" name="search_term"> 
+        <input type="submit" value="Search">
+      </form>
+    </div>
+    <div>
+      {% if results %}
+          <table class="styled-table">
+              <thead>
+              <tr>
+                  <th>User ID</th>
+                  <th>Name</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>       
+                  <!-- add more columns as needed -->
+              </tr>
+              </thead>
+              <tbody>
+              {% for row in results %}
+              <tr>
+                  <td class="ellipsis"><a href="/update/{{ row['user_id'] }}">{{ row["user_id"] }}</a></td>
+                  <td class="ellipsis"><span>{{ row["name"] }}</span></td>
+                  <td class="ellipsis"><span>{{ row["firstname"] }}</span></td>
+                  <td class="ellipsis"><span>{{ row["lastname"] }}</span></td>
+                  <td class="ellipsis"><span>{{ row["email"] }}</span></td>
+                  <!-- add more columns as needed -->
+              </tr>
+              {% endfor %}
+              </tbody>
+          </table>          
+      {% elif message%}
+        <h3>{{ message }}</h3>
+      {% endif %}
+    </div>
+</div>
+</body>
+</html>

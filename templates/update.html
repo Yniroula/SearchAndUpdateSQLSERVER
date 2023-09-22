@@ -1,0 +1,73 @@
+<!-- update.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link rel="stylesheet" href="/static/updatestyle.css">
+    <title>Update User Details</title>
+</head>
+<body>
+    <div>
+        <!-- Button to go back to index page -->
+        <div>
+        <a href="/" target="_self">
+            <button class="back_button">Go Back</button>
+        </a>
+        </div>
+
+        <div><h1>User Details</h1></div>
+        <div class="update-form-details">
+            <div>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                {% for category, message in messages %}
+                        
+                        {% if category == 'success' %}
+                            <div class="success">{{ message }}</div>
+                        {% else %}
+                            <div class="error">{{ message }}</div>
+                        {% endif %}
+    
+                {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+            <br>
+            <form  method="POST" action="/update/{{ user['user_id'] }}">
+                <div class="form-row">
+                    <label><strong>ID:</strong></label>
+                    <input type="text" name="user_id" value="{{ user['user_id'] }}" readonly><br>
+                    <label><strong>Email:</strong></label>
+                    <input type="text" name="email" value="{{ user['email'] }}" readonly><br>
+                </div>
+                <div class="form-row">
+                    <label><strong>First Name:</strong></label>
+                    <input type="text" name="users_firstname" value="{{ user['users_firstname'] }}" readonly><br>
+                    <label><strong>Last Name:</strong></label>
+                    <input type="text" name="users_lastname" value="{{ user['users_lastname'] }}" readonly><br>
+                </div>
+            
+                <div>
+                    <h2>Update</h2>
+                    <hr>
+                    <label><strong>Update account</strong></label>
+                    <select name="account_locked" required>
+                        <option value="Y" {% if user['account_locked'] == 'Y' %} selected {% endif %}>NO</option>
+                        <option value="N" {% if user['account_locked'] == 'N' %} selected {% endif %}>YES</option>
+                    </select>
+                    <br>
+                    <label><Strong>Account Status:</Strong></label>
+                    <select name="users_status" required>
+                        <option value="ACTIVE" {% if user['users_status'] == 'ACTIVE' %} selected {% endif %}>ACTIVE</option>
+                        <option value="DELETE" {% if user['users_status'] == 'DELETE' %} selected {% endif %}>DELETE</option>
+                    </select>
+                    <br>
+                    <input class="button-link" type="submit" value="UPDATE">
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

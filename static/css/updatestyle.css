@@ -1,0 +1,174 @@
+/* Apply styles to the container */
+.top-center {
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fdfdfd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+
+.search-box{
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #eef5f2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .update-form-details {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #eef5f2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .form-row {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .form-row label {
+    flex-basis: 150px; /* Adjust the width of the label as needed */
+    font-weight: bold;
+    color: #2f4f4f;
+    margin-right: 10px;
+  }
+  
+  .form-row input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  /* Style the h1 heading */
+  h1 {
+    font-size: 36px;
+    text-align: center;
+    color: #2f4f4f;
+    margin:0px;
+    padding:0px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h3 {
+    font-size: 16px;
+    text-align: center;
+    color: #eb6531;
+    margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Style the form */
+  form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .search-box form {
+    display: flex;
+    align-items: center;
+  }
+
+
+  /* Style the search dropdown */
+  select {
+    flex: 1;
+    padding: 12px;
+    margin: 10px 5px 15px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Style the search term input */
+  input[type="text"] {
+    flex: 2;
+    padding: 12px;
+    margin: 7px 5px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* Style the submit button */
+  input[type="submit"], .back_button {
+    flex: 1;
+    padding: 12px;
+    margin: 10px 5px 15px 15px;
+    background-color: #228b22;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+
+  /* On hover, change the background color of the submit button */
+  input[type="submit"]:hover, .back_button:hover {
+    background-color: #006400;
+  }
+
+
+  
+  /* Style the results table */
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .styled-table th {
+    background-color: #2f4f4f;
+    color: #fff;
+  }
+  
+  /* Style the links in the table */
+  .styled-table a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .styled-table a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Style the success and error messages */
+  .success,
+  .error {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .success {
+    color: #006400;
+    background-color: #e0ffe0;
+    border: 1px solid #98fb98;
+  }
+  
+  .error {
+    color: #8b0000;
+    background-color: #ffe0e0;
+    border: 1px solid #ff6347;
+  }
+  
